@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Seletores Hierarquicos</title>
+	<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+
+			$('h2').css("margin","0");
+			$('.div1').css({"margin-bottom":"20px","background":"silver" });
+			//filhas
+
+			$('.div1 span').hide().delay('1000').fadeIn(1000).css({color:'green','font-size':'15px'});
+			$('.div1 h2').hide().css({'font-size':'50px',color:'red'}).fadeIn('800');
+			//filhas diretas do elemento
+			$('.div1 > span').css({color:'red'});
+			//Primeiro elemento apos o selecionado
+			$('.p1 + p').css({'font-size':'25px'});
+			//atacando todos os elementos apos o selecionado
+			$('.p1 ~ p').css({'color':'orange'});
+		});
+	</script>
+	</head>
+	<body>
+		<div class="div1">
+			<h2>H2 filho de DIV1</h2>
+			<p>P filho de DIV1
+			<span>Span Filho ancestral de div filha de P</span></p>
+			<span>Filho direto DIV1</span>
+		</div>
+			<h2>H2 fora de DIV1</h2>
+			<p class="p1">P fora de DIV1</p>
+			<p>P2 fora de DIV1</p>
+			<p>P 3fora de DIV1</p>
+	</body>
+	</html>
